@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    image: stream-elements-bot/node:18.16
+    container_name: stream-elements-bot-app
+    command: sh -c "npm install && npm run dev"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/usr/app
+    ports:
+      - 3000:3000
